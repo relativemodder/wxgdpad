@@ -11,7 +11,6 @@ public:
 class Frame : wxFrame {
 public:
     wxPanel* m_mainPanel;
-    wxBoxSizer* m_mainPanelSizer;
     wxStaticText* m_prsValueLabel;
     wxSlider* m_pollingRateSlider;
 

@@ -36,6 +36,7 @@ void Frame::DrawPollingRateSlider() {
 
     m_prsValueLabel->SetFont(m_mainPanel->GetFont().Scale(1.3));
     m_prsValueLabel->SetPosition({ 420, 120 });
+    m_prsValueLabel->SetSize({ 80, 30 });
 
     auto prsLabel = new wxStaticText(
         m_mainPanel,
@@ -93,9 +94,6 @@ Frame::Frame()
     SetMaxSize({ 500, 600 });
 
     m_mainPanel = new wxPanel(this);
-    m_mainPanelSizer = new wxBoxSizer(wxVERTICAL);
-    
-    m_mainPanel->SetSizer(m_mainPanelSizer);
 
     DrawTitle();
     DrawPollingRateSlider();
