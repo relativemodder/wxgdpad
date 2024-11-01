@@ -79,8 +79,8 @@ void Frame::DrawApplyButton() {
         m_mainPanel, m_mainPanel->GetId(),
         "Apply"
     );
-    applyButton->SetPosition({ 15, 520 });
-    applyButton->SetSize({ 454, 30 });
+    applyButton->SetPosition({ 360, 520 });
+    applyButton->SetSize({ 100, 30 });
 }
 
 
