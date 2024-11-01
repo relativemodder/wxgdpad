@@ -1,0 +1,7 @@
+Package: libcap
+Version: 2.70
+Architecture: x64-linux
+Multi-Arch: same
+Abi: 16095ebc17b482d3978fd56224a258e053eaff2a79f4190b0d2b1ba1cecc720b
+Description: A library for getting and setting POSIX.1e (formerly POSIX 6) draft 15 capabilities.
+Status: install ok installed

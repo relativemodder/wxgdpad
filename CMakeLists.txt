@@ -14,7 +14,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project ("wxgdpad")
 
-include(./vcpkg/scripts/buildsystems/vcpkg.cmake)
+if (WIN32)
+	include(./vcpkg/scripts/buildsystems/vcpkg.cmake) # install dependencies manually from vcpkg
+endif()
 
 find_package(fmt CONFIG REQUIRED)
 find_package(wxWidgets CONFIG REQUIRED)

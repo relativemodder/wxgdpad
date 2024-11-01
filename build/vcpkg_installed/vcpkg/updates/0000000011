@@ -1,0 +1,8 @@
+Package: vcpkg-tool-meson
+Version: 1.6.0
+Depends: vcpkg-cmake-get-vars
+Architecture: x64-linux
+Multi-Arch: same
+Abi: bcc5ef0c23d288390129f2d4729ec0e46581021eb963ab3a1c8679359e5b5dfa
+Description: Meson build system
+Status: install ok installed

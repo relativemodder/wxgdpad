@@ -1,0 +1,9 @@
+Package: fontconfig
+Version: 2.15.0
+Port-Version: 1
+Depends: dirent, expat, freetype, getopt, gettext, gperf, libiconv, libuuid, pthread, vcpkg-tool-meson
+Architecture: x64-linux
+Multi-Arch: same
+Abi: dafcbfc3537a18225c208c17344879a3b6a7e63ac127133a58113788112c5778
+Description: Library for configuring and customizing font access.
+Status: install ok half-installed

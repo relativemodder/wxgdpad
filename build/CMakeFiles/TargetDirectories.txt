@@ -1,0 +1,3 @@
+/home/relative/Coding/wxgdpad/build/CMakeFiles/wxgdpad.dir
+/home/relative/Coding/wxgdpad/build/CMakeFiles/edit_cache.dir
+/home/relative/Coding/wxgdpad/build/CMakeFiles/rebuild_cache.dir

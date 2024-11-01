@@ -1,0 +1,7 @@
+Package: dbus
+Feature: systemd
+Depends: libsystemd
+Architecture: x64-linux
+Multi-Arch: same
+Description: Build with systemd at_console support
+Status: install ok installed
