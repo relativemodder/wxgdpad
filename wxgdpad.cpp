@@ -43,6 +43,7 @@ void Frame::DrawPollingRateSlider() {
     );
 
     prsLabel->SetFont(m_mainPanel->GetFont().Scale(1.3));
+    prsLabel->SetSize({ 200, 28 });
     prsLabel->SetPosition({ 30, 80 });
 
     m_pollingRateSlider = new wxSlider(
