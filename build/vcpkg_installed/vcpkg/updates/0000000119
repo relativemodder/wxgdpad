@@ -1,7 +1,0 @@
-Package: cairo
-Feature: fontconfig
-Depends: fontconfig
-Architecture: x64-linux
-Multi-Arch: same
-Description: Build with fontconfig
-Status: install ok half-installed

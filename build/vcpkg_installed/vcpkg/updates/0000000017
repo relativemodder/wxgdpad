@@ -1,7 +1,0 @@
-Package: libmount
-Version: 2.40
-Architecture: x64-linux
-Multi-Arch: same
-Abi: 15aa52b5e895554a0c1e88b43659ec1a86949e7294a62da5e361d311eb5b544e
-Description: Block device identification library from util-linux
-Status: install ok installed

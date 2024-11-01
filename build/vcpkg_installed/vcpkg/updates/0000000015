@@ -1,8 +1,0 @@
-Package: libxcrypt
-Version: 4.4.36
-Port-Version: 1
-Architecture: x64-linux
-Multi-Arch: same
-Abi: ee6bcd6a6033b29c34b97bd3ab54b9e0d209d233863b1825dd0be3f4ed443eb0
-Description: libxcrypt is a modern library for one-way hashing of passwords. On Linux-based systems, by default libxcrypt will be binary backward compatible with the libcrypt.so.1 shipped as part of the GNU C Library.
-Status: install ok installed

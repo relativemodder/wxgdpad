@@ -1,8 +1,0 @@
-Package: libsystemd
-Version: 256.4
-Depends: gperf, libcap, liblzma, libmount, libxcrypt, lz4, vcpkg-tool-meson, zstd
-Architecture: x64-linux
-Multi-Arch: same
-Abi: 7dde1b81357665fa0747aa619088aa8bfb01b308877538b8f8292ef52c7f149e
-Description: Libsystemd
-Status: install ok installed

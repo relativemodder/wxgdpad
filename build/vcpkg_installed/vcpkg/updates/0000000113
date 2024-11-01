@@ -1,8 +1,0 @@
-Package: getopt
-Version: 0
-Port-Version: 3
-Architecture: x64-linux
-Multi-Arch: same
-Abi: 459f6ce00d4b515110faa2da9ecec1b2c652cba25c6c593d4bfcd64b993021a7
-Description: The getopt and getopt_long functions automate some of the chore involved in parsing typical unix command line options.
-Status: install ok installed
