@@ -12,6 +12,7 @@ void Frame::ShowPublic(bool show) {
     Show(show);
 }
 
+
 Frame* Frame::GetShared() {
     return g_frameInstance;
 }
@@ -65,10 +66,10 @@ void Frame::DrawTitle() {
     auto titleLabel = new wxStaticText(
         m_mainPanel,
         m_mainPanel->GetId(),
-        "\n                       GDPad Settings" // bruh alignment please help
+        "GDPad Settings"
     );
     titleLabel->SetFont(m_mainPanel->GetFont().Scale(2).MakeBold());
-    m_mainPanelSizer->Add(titleLabel);
+    titleLabel->SetPosition({ 160, 10 }); // bruh alignment please help
 }
 
 
