@@ -69,6 +69,7 @@ void Frame::DrawTitle() {
         "GDPad Settings"
     );
     titleLabel->SetFont(m_mainPanel->GetFont().Scale(2).MakeBold());
+    titleLabel->SetSize({ 300, 40 });
     titleLabel->SetPosition({ 160, 10 }); // bruh alignment please help
 }
 
