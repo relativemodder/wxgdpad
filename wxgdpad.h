@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <wx/wx.h>
 #include <iostream>
-#include <fmt/format.h>
 
 
 class App : public wxApp {
@@ -17,6 +16,7 @@ public:
 
     static Frame* GetShared();
     static void OnPRSChange(wxScrollEvent& event);
+    static void OnApplyClick(wxCommandEvent& event);
 
     Frame();
     void DrawTitle();

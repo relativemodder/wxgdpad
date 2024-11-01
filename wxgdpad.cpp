@@ -75,6 +75,15 @@ void Frame::DrawTitle() {
 }
 
 
+void Frame::OnApplyClick(wxCommandEvent& event) {
+    wxMessageBox(
+        "Applied!",
+        "Success",
+        wxICON_INFORMATION
+    );
+}
+
+
 void Frame::DrawApplyButton() {
     auto applyButton = new wxButton(
         m_mainPanel, m_mainPanel->GetId(),
@@ -82,6 +91,8 @@ void Frame::DrawApplyButton() {
     );
     applyButton->SetPosition({ 360, 520 });
     applyButton->SetSize({ 100, 30 });
+
+    applyButton->Bind(wxEVT_BUTTON, Frame::OnApplyClick);
 }
 
 
