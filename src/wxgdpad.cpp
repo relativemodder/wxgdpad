@@ -96,8 +96,7 @@ void Frame::DrawApplyButton() {
 }
 
 
-Frame::Frame()
-    : wxFrame(nullptr, wxID_ANY, "wxGDPad")
+Frame::Frame() : wxFrame(nullptr, wxID_ANY, APP_NAME)
 {
     g_frameInstance = this;
 

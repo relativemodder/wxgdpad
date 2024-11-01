@@ -1,5 +1,7 @@
 ﻿cmake_minimum_required (VERSION 3.8)
 
+add_compile_definitions(APP_NAME="wxGDPad")
+
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
   cmake_policy(SET CMP0141 NEW)
@@ -19,7 +21,18 @@ find_package(fmt CONFIG REQUIRED)
 find_package(wxWidgets CONFIG REQUIRED)
 
 
-add_executable (wxgdpad WIN32 "wxgdpad.cpp" "wxgdpad.h")
+file(GLOB_RECURSE PROJ_SRC src/*.c*)
+file(GLOB_RECURSE PROJ_H src/*.h*)
+
+
+set(PROJ_EXEC "${PROJ_SRC} ${PROJ_H}")
+
+if (WIN32)
+	add_executable (wxgdpad WIN32 ${PROJ_EXEC})
+else()
+	add_executable (wxgdpad ${PROJ_EXEC})
+endif()
+
 
 if (CMAKE_VERSION VERSION_GREATER 3.7)
   set_property(TARGET wxgdpad PROPERTY CXX_STANDARD 20)
@@ -28,6 +41,5 @@ endif()
 target_compile_features(wxgdpad PUBLIC cxx_std_20)
 
 link_libraries(${OPENGL_LIBRARIES})
-
-
 target_link_libraries(wxgdpad PRIVATE fmt::fmt wx::core wx::base)
+target_include_directories(wxgdpad PUBLIC include)
