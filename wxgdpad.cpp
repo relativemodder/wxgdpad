@@ -23,15 +23,15 @@ Frame::Frame()
     
     panel->SetSizer(sizer);
 
-    auto btn1 = new wxButton(panel, panel->GetId(), "Bruh");
-    auto btn2 = new wxButton(panel, panel->GetId(), "Bruh2");
+    auto titleLabel = new wxStaticText(
+        panel, 
+        panel->GetId(), 
+        "\n                       GDPad Settings" // bruh alignment please help
+    );
+    titleLabel->SetFont(panel->GetFont().Scale(2));
 
-    btn1->Bind(wxEVT_LEFT_UP, [&](wxMouseEvent& event) {
-        wxMessageBox(wxString::Format("The frame is clicked at {x=%d, y=%d}", event.GetPosition().x, event.GetPosition().y), "FrameClick", wxOK);
-    });
+    sizer->Add(titleLabel);
 
-    sizer->Add(btn1);
-    sizer->Add(btn2);
 }
 
 
