@@ -25,12 +25,10 @@ file(GLOB_RECURSE PROJ_SRC src/*.c*)
 file(GLOB_RECURSE PROJ_H src/*.h*)
 
 
-set(PROJ_EXEC "${PROJ_SRC} ${PROJ_H}")
-
 if (WIN32)
-	add_executable (wxgdpad WIN32 ${PROJ_EXEC})
+	add_executable (wxgdpad WIN32 ${PROJ_SRC} ${PROJ_H})
 else()
-	add_executable (wxgdpad ${PROJ_EXEC})
+	add_executable (wxgdpad ${PROJ_SRC} ${PROJ_H})
 endif()
 
 

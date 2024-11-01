@@ -362,3 +362,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Flatpak junk
+flatpak
+.flatpak-builder
+repo
