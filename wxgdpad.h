@@ -21,6 +21,7 @@ public:
     Frame();
     void DrawTitle();
     void DrawPollingRateSlider();
+    void DrawApplyButton();
     void ShowPublic(bool show = true);
 };
 

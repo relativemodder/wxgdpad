@@ -74,6 +74,16 @@ void Frame::DrawTitle() {
 }
 
 
+void Frame::DrawApplyButton() {
+    auto applyButton = new wxButton(
+        m_mainPanel, m_mainPanel->GetId(),
+        "Apply"
+    );
+    applyButton->SetPosition({ 15, 520 });
+    applyButton->SetSize({ 454, 30 });
+}
+
+
 Frame::Frame()
     : wxFrame(nullptr, wxID_ANY, "wxGDPad")
 {
@@ -89,6 +99,7 @@ Frame::Frame()
 
     DrawTitle();
     DrawPollingRateSlider();
+    DrawApplyButton();
 }
 
 
