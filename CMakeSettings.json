@@ -10,7 +10,16 @@
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "clang_cl_x64_x64" ],
-      "variables": []
+      "variables": [
+        {
+          "name": "CMAKE_CXX_STANDARD",
+          "value": "20"
+        },
+        {
+          "name": "CMAKE_CXX_STANDARD_REQUIRED",
+          "value": "On"
+        }
+      ]
     }
   ]
 }

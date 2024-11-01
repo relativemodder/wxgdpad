@@ -1,4 +1,5 @@
 ﻿#include "wxgdpad.h"
+#include <fmt/format.h>
 
 bool App::OnInit() {
     Frame* frame = new Frame();
@@ -11,27 +12,80 @@ void Frame::ShowPublic(bool show) {
     Show(show);
 }
 
+Frame* Frame::GetShared() {
+    return g_frameInstance;
+}
+
+
+void Frame::OnPRSChange(wxScrollEvent& event) {
+    auto value = event.GetInt();
+    int roundedValue = round((double)value / 1000) * 1000;
+
+    Frame::GetShared()->m_prsValueLabel->SetLabelText(std::to_string(roundedValue));
+    Frame::GetShared()->m_pollingRateSlider->SetValue(roundedValue);
+}
+
+
+void Frame::DrawPollingRateSlider() {
+    m_prsValueLabel = new wxStaticText(
+        m_mainPanel,
+        m_mainPanel->GetId(),
+        "8000"
+    );
+
+    m_prsValueLabel->SetFont(m_mainPanel->GetFont().Scale(1.3));
+    m_prsValueLabel->SetPosition({ 420, 120 });
+
+    auto prsLabel = new wxStaticText(
+        m_mainPanel,
+        m_mainPanel->GetId(),
+        "Polling Rate"
+    );
+
+    prsLabel->SetFont(m_mainPanel->GetFont().Scale(1.3));
+    prsLabel->SetPosition({ 30, 80 });
+
+    m_pollingRateSlider = new wxSlider(
+        m_mainPanel,
+        m_mainPanel->GetId(),
+        8000, 1000, 8000
+    );
+
+    m_pollingRateSlider->Bind(wxEVT_SCROLL_THUMBRELEASE, Frame::OnPRSChange);
+
+    m_pollingRateSlider->SetSize({ 380, 30 });
+    m_pollingRateSlider->SetPosition({ 20, 120 });
+
+
+}
+
+
+void Frame::DrawTitle() {
+    auto titleLabel = new wxStaticText(
+        m_mainPanel,
+        m_mainPanel->GetId(),
+        "\n                       GDPad Settings" // bruh alignment please help
+    );
+    titleLabel->SetFont(m_mainPanel->GetFont().Scale(2).MakeBold());
+    m_mainPanelSizer->Add(titleLabel);
+}
+
 
 Frame::Frame()
     : wxFrame(nullptr, wxID_ANY, "wxGDPad")
 {
+    g_frameInstance = this;
+
     SetMinSize({ 500, 600 });
     SetMaxSize({ 500, 600 });
 
-    wxPanel* panel = new wxPanel(this);
-    auto sizer = new wxBoxSizer(wxVERTICAL);
+    m_mainPanel = new wxPanel(this);
+    m_mainPanelSizer = new wxBoxSizer(wxVERTICAL);
     
-    panel->SetSizer(sizer);
+    m_mainPanel->SetSizer(m_mainPanelSizer);
 
-    auto titleLabel = new wxStaticText(
-        panel, 
-        panel->GetId(), 
-        "\n                       GDPad Settings" // bruh alignment please help
-    );
-    titleLabel->SetFont(panel->GetFont().Scale(2));
-
-    sizer->Add(titleLabel);
-
+    DrawTitle();
+    DrawPollingRateSlider();
 }
 
 
