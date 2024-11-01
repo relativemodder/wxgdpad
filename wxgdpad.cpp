@@ -1,5 +1,5 @@
 ﻿#include "wxgdpad.h"
-#include <fmt/format.h>
+
 
 bool App::OnInit() {
     Frame* frame = new Frame();

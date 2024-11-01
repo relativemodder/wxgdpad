@@ -1,7 +1,4 @@
-﻿# CMakeList.txt : CMake project for wxgdpad, include source and define
-# project specific logic here.
-#
-cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 3.8)
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -15,21 +12,22 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 project ("wxgdpad")
 
 if (WIN32)
-	include(./vcpkg/scripts/buildsystems/vcpkg.cmake) # install dependencies manually from vcpkg
+	include(./vcpkg/scripts/buildsystems/vcpkg.cmake) # install dependencies from vcpkg for static linking on FuckWindows
 endif()
 
 find_package(fmt CONFIG REQUIRED)
 find_package(wxWidgets CONFIG REQUIRED)
 
 
-# Add source to this project's executable.
 add_executable (wxgdpad WIN32 "wxgdpad.cpp" "wxgdpad.h")
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
+if (CMAKE_VERSION VERSION_GREATER 3.7)
   set_property(TARGET wxgdpad PROPERTY CXX_STANDARD 20)
 endif()
 
+target_compile_features(wxgdpad PUBLIC cxx_std_20)
+
 link_libraries(${OPENGL_LIBRARIES})
 
-# TODO: Add tests and install targets if needed.
+
 target_link_libraries(wxgdpad PRIVATE fmt::fmt wx::core wx::base)

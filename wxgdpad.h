@@ -1,11 +1,12 @@
 ﻿#pragma once
 #include <wx/wx.h>
 #include <iostream>
+#include <fmt/format.h>
 
 
 class App : public wxApp {
 public:
-    virtual bool OnInit(); // Виртуальная функция иницилизации.
+    virtual bool OnInit();
 };
 
 class Frame : wxFrame {
@@ -24,4 +25,4 @@ public:
     void ShowPublic(bool show = true);
 };
 
-Frame* g_frameInstance;
+inline Frame* g_frameInstance;
