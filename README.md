@@ -1,11 +1,11 @@
 # wxgdpad
 
-Dependencies on Linux:
+## Dependencies on Linux
 
 - fmt
 - wxwidgets
 
-If you're on Debian-based systems you should install -dev versions of the above packages.
+If you're on Debian-based systems you should install -dev versions of the above packages for building it.
 
 
 
